@@ -33,7 +33,15 @@ function sync() {
   );
 
   // get weekly reports of toggle
-  const togglItems = toggl.getDetailReport();
+  const now = new Date();
+  const startDate = new Date(
+    now.getFullYear(),
+    now.getMonth(),
+    now.getDate() - 1
+  );
+  const togglItems = toggl.getDetailReport(
+    Utilities.formatDate(startDate, "Asia/Tokyo", "yyyy-MM-dd")
+  );
   if (!togglItems) {
     throw new Error("Failed to get toggl reports. Empty data in response.");
   }
