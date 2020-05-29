@@ -18,7 +18,7 @@ const CONFIG = {
     SHEET_NAME: "log",
     // start: 1~
     DATA_AREA_NUM: {
-      ROW: 2,
+      ROW: 1,
       COLUM: 1,
     },
     COLUMN: Column,
